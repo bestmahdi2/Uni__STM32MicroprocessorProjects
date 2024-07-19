@@ -1,0 +1,8 @@
+https://microcontrollerslab.com/stm32-blue-pill-4-digit-7-segment-display-stm32cubeide/
+
+https://deepbluembedded.com/interfacing-7-segment-display-stm32/
+
+https://www.engineersgarage.com/stm32-microcontroller-7-segment-interface/
+
+
+https://www.youtube.com/watch?v=cVplF4dvDk8

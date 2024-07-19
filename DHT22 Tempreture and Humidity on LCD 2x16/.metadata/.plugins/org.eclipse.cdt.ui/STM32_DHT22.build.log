@@ -1,0 +1,39 @@
+22:39:33 **** Incremental Build of configuration Debug for project STM32_DHT22 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:8:
+../Core/Inc/MY_DHT22.h:38:13: warning: 'ONE_WIRE_PinMode' declared 'static' but never defined [-Wunused-function]
+   38 | static void ONE_WIRE_PinMode(OnePinMode_Typedef mode);
+      |             ^~~~~~~~~~~~~~~~
+../Core/Inc/MY_DHT22.h:40:13: warning: 'ONE_WIRE_Pin_Write' declared 'static' but never defined [-Wunused-function]
+   40 | static void ONE_WIRE_Pin_Write(bool state);
+      |             ^~~~~~~~~~~~~~~~~~
+../Core/Inc/MY_DHT22.h:41:13: warning: 'ONE_WIRE_Pin_Read' declared 'static' but never defined [-Wunused-function]
+   41 | static bool ONE_WIRE_Pin_Read(void);
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Inc/MY_DHT22.h:43:13: warning: 'DelayMicroSeconds' declared 'static' but never defined [-Wunused-function]
+   43 | static void DelayMicroSeconds(uint32_t uSec);
+      |             ^~~~~~~~~~~~~~~~~
+../Core/Inc/MY_DHT22.h:45:13: warning: 'DHT22_StartAcquisition' declared 'static' but never defined [-Wunused-function]
+   45 | static void DHT22_StartAcquisition(void);
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Inc/MY_DHT22.h:47:13: warning: 'DHT22_ReadRaw' declared 'static' but never defined [-Wunused-function]
+   47 | static void DHT22_ReadRaw(uint8_t *data);
+      |             ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "STM32_DHT22.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\SKU\Term 6\6. Microprocesor\Other Project\Hossien\STM32_DHT22\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_DHT22.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_DHT22.elf
+ 
+arm-none-eabi-size   STM32_DHT22.elf 
+arm-none-eabi-objdump -h -S  STM32_DHT22.elf  > "STM32_DHT22.list"
+arm-none-eabi-objcopy  -O ihex  STM32_DHT22.elf  "STM32_DHT22.hex"
+   text	   data	    bss	    dec	    hex	filename
+  30548	    488	   1608	  32644	   7f84	STM32_DHT22.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_DHT22.hex
+ 
+Finished building: STM32_DHT22.list
+ 
+
+22:39:34 Build Finished. 0 errors, 6 warnings. (took 1s.110ms)
+

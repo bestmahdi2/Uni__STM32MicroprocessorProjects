@@ -1,0 +1,20 @@
+22:08:24 **** Build of configuration Debug for project SIX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "SIX.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\SKU\Term 6\6. Microprocesor\Project\6\workspace6\SIX\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SIX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SIX.elf
+ 
+arm-none-eabi-size   SIX.elf 
+arm-none-eabi-objdump -h -S  SIX.elf  > "SIX.list"
+arm-none-eabi-objcopy  -O ihex  SIX.elf  "SIX.hex"
+   text	   data	    bss	    dec	    hex	filename
+   8312	     20	   1652	   9984	   2700	SIX.elf
+Finished building: default.size.stdout
+ 
+Finished building: SIX.hex
+ 
+Finished building: SIX.list
+ 
+
+22:08:26 Build Finished. 0 errors, 0 warnings. (took 1s.600ms)
+

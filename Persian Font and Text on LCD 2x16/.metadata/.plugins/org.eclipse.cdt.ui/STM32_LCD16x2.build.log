@@ -1,0 +1,25 @@
+17:52:15 **** Build of configuration Debug for project STM32_LCD16x2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:130:4: warning: implicit declaration of function 'lcd_write_data'; did you mean 'lcd_write_command'? [-Wimplicit-function-declaration]
+  130 |    lcd_write_data(&lcd, 4);
+      |    ^~~~~~~~~~~~~~
+      |    lcd_write_command
+arm-none-eabi-gcc -o "STM32_LCD16x2.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\SKU\Term 6\6. Microprocesor\Other Project\Pouria\STM32_LCD16x2\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_LCD16x2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_LCD16x2.elf
+ 
+arm-none-eabi-size   STM32_LCD16x2.elf 
+arm-none-eabi-objdump -h -S  STM32_LCD16x2.elf  > "STM32_LCD16x2.list"
+arm-none-eabi-objcopy  -O ihex  STM32_LCD16x2.elf  "STM32_LCD16x2.hex"
+   text	   data	    bss	    dec	    hex	filename
+   5932	     20	   1572	   7524	   1d64	STM32_LCD16x2.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_LCD16x2.hex
+Finished building: STM32_LCD16x2.list
+ 
+ 
+
+17:52:17 Build Finished. 0 errors, 1 warnings. (took 2s.547ms)
+
